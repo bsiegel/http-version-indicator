@@ -4,7 +4,7 @@
   "license": "WTFPL",
   "scripts": {
     "start": "web-ext run",
-    "build": "web-ext build -i package.json yarn.lock -o",
+    "build": "web-ext build -i jsconfig.json package.json yarn.lock -o",
     "elint": "web-ext lint",
     "lint": "eslint .",
     "prettify": "prettier --write **/*.js"
