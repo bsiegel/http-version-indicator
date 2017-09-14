@@ -1,0 +1,22 @@
+{
+  "name": "http2-indicator",
+  "version": "1.0.0",
+  "license": "WTFPL",
+  "scripts": {
+    "start": "web-ext run",
+    "build": "web-ext build -i package.json yarn.lock -o",
+    "elint": "web-ext lint",
+    "lint": "eslint .",
+    "prettify": "prettier --write **/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "prettier": "^1.6.1",
+    "web-ext": "^2.0.0"
+  }
+}
