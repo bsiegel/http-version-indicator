@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "version": "1.0",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  "icons": {
+    "48": "icons/icon.svg",
+    "64": "icons/icon.svg",
+    "96": "icons/icon.svg",
+    "128": "icons/icon.svg"
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "webRequest"
+  ],
+  "page_action": {
+    "default_icon": "res/icon-spdy-subactive.svg"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ]
+}
