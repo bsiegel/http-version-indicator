@@ -33,6 +33,15 @@ function getVersion(header) {
 function updateState(tabId, version) {
   state[tabId] = version;
   console.log(`${tabId} -> State is now ${state[tabId]}`);
+  setPageAction(tabId, version);
+}
+
+function setPageAction(tabId) {
+  let version = state[tabId];
+  if (!version) {
+    return;
+  }
+
   if (version === STATE_NONE) {
     browser.pageAction.hide(tabId);
   } else {
@@ -90,6 +99,16 @@ browser.webRequest.onHeadersReceived.addListener(
   { urls: ["<all_urls>"] },
   ["responseHeaders"]
 );
+
+browser.webNavigation.onCommitted.addListener(e => {
+  if (e.frameId === 0) {
+    setPageAction(e.tabId);
+  }
+});
+
+browser.tabs.onActivated.addListener(e => {
+  setPageAction(e.tabId);
+});
 
 browser.tabs.onRemoved.addListener(tabId => {
   console.log(`Removing state for ${tabId}`);

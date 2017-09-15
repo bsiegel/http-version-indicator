@@ -13,10 +13,12 @@
   "permissions": [
     "<all_urls>",
     "tabs",
+    "webNavigation",
     "webRequest"
   ],
   "page_action": {
-    "default_icon": "res/icon-spdy-subactive.svg"
+    "default_icon": "res/icon-spdy-subactive.svg",
+    "browser_style": false
   },
   "background": {
     "scripts": ["background.js"]
