@@ -32,7 +32,6 @@ function getVersion(header) {
 
 function updateState(tabId, version) {
   state[tabId] = version;
-  console.log(`${tabId} -> State is now ${state[tabId]}`);
   setPageAction(tabId, version);
 }
 
@@ -87,13 +86,11 @@ browser.webRequest.onHeadersReceived.addListener(
 
     for (let header of e.responseHeaders) {
       if (header.name.toLowerCase() === HEADER_SPDY) {
-        console.log(`${e.tabId} -> ${e.type} loaded over ${header.value}`);
         evaluateState(e.tabId, e.type, header.value);
         return;
       }
     }
 
-    console.log(`${e.tabId} -> ${e.type} NOT loaded over SPDY`);
     evaluateState(e.tabId, e.type, STATE_NONE);
   },
   { urls: ["<all_urls>"] },
@@ -111,6 +108,5 @@ browser.tabs.onActivated.addListener(e => {
 });
 
 browser.tabs.onRemoved.addListener(tabId => {
-  console.log(`Removing state for ${tabId}`);
   state[tabId] = null;
 });

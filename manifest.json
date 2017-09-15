@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
-  "version": "1.0",
+  "version": "3.0beta1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "icons": {
@@ -9,6 +9,11 @@
     "64": "icons/icon.svg",
     "96": "icons/icon.svg",
     "128": "icons/icon.svg"
+  },
+  "applications": {
+    "gecko": {
+      "id": "spdyindicator@chengsun.github.com"
+    }
   },
   "permissions": [
     "<all_urls>",

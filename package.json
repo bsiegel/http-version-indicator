@@ -1,10 +1,11 @@
 {
   "name": "http2-indicator",
-  "version": "1.0.0",
+  "version": "3.0beta1",
   "license": "WTFPL",
   "scripts": {
     "start": "web-ext run",
     "build": "web-ext build -i jsconfig.json package.json yarn.lock -o",
+    "sign": "web-ext sign -i jsconfig.json package.json yarn.lock",
     "elint": "web-ext lint",
     "lint": "eslint .",
     "prettify": "prettier --write **/*.js"
