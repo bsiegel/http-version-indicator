@@ -58,11 +58,11 @@ function setPageAction(tabId) {
 
 function getIcon(version) {
   if (version === STATE_MIXED) {
-    return "icons/icon-spdy-subactive.svg";
+    return "icons/icon-gray.svg";
   } else if (version === "HTTP/2") {
-    return "icons/icon-http2-active.svg";
+    return "icons/icon-blue.svg";
   } else {
-    return "icons/icon-spdy-active.svg";
+    return "icons/icon-green.svg";
   }
 }
 

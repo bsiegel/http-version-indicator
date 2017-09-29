@@ -22,7 +22,6 @@
     "webRequest"
   ],
   "page_action": {
-    "default_icon": "res/icon-spdy-subactive.svg",
     "browser_style": false
   },
   "background": {
