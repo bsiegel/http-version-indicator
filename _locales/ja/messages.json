@@ -1,0 +1,24 @@
+{
+  "extensionName": {
+    "message": "HTTP/2 Indicator",
+    "description": "アドオンの名称"
+  },
+  "extensionDescription": {
+    "message": "アドレスバーに HTTP/2 サポート状況を表示します",
+    "description": "アドオンの概要"
+  },
+  "pageActionTitleMixed": {
+    "message": "トップレベルドキュメントに含まれるサブドキュメントにおいて HTTP/2 が有効です",
+    "description": "サブドキュメントのみにおいて有効な場合のページアクションツールチップ"
+  },
+  "pageActionTitle": {
+    "message": "トップレベルドキュメントにおいて $VERSION$ が有効です",
+    "description": "トップレベルドキュメントにおいて有効な場合のページアクションツールチップ",
+    "placeholders": {
+      "version" : {
+        "content" : "$1",
+        "example" : "HTTP/2"
+      }
+    }
+  }
+}
