@@ -1,0 +1,18 @@
+@@ -1,14 +1,14 @@
+ {
+   "extensionName": {
+-    "message": "HTTP/2 ve SPDY Göstergesi",
++    "message": "HTTP/2 Gösterge",
+     "description": "Uzantının adı."
+   },
+   "extensionDescription": {
+-    "message": "Adres çubuğunda HTTP/2 ve SPDY desteğini gösteren bir gösterge.",
++    "message": "Adres çubuğunda HTTP/2 desteği gösteren bir gösterge.",
+     "description": "Eklentinin açıklaması."
+   },
+   "pageActionTitleMixed": {
+-    "message": "HTTP/2 veya SPDY, üst düzey belgede bulunan bazı alt belgeler için etkindir",
++    "message": "HTTP/2 veya SPDY, üst düzey belgede bulunan bazı alt belgeler için etkindir",
+     "description": "Sadece alt belge etkin olduğunda sayfa eylem ipucu."
+   },
+   "pageActionTitle": {
