@@ -1,23 +1,23 @@
 {
   "name": "http2-indicator",
-  "version": "3.0",
+  "version": "3.0.0",
   "license": "WTFPL",
   "scripts": {
     "start": "web-ext run",
-    "build": "web-ext build -i jsconfig.json package.json yarn.lock icons/src -o",
-    "sign": "web-ext sign -i jsconfig.json package.json yarn.lock icons/src ",
+    "build": "web-ext build -i jsconfig.json package.json package-lock.json node_modules *.md icons/src -n 'http2-indicator-{version}.zip' -o",
+    "sign": "web-ext sign -i jsconfig.json package.json package-lock.json node_modules *.md icons/src ",
     "elint": "web-ext lint",
     "lint": "eslint .",
-    "prettify": "prettier --write **/*.js"
+    "prettify": "prettier --write *.js"
   },
   "devDependencies": {
-    "eslint": "^4.7.2",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "prettier": "^1.7.2",
-    "web-ext": "^2.0.0"
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "prettier": "^2.1.2",
+    "web-ext": "^5.1.0"
   }
 }

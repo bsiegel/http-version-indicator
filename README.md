@@ -8,6 +8,6 @@ Address bar icon by http://fontawesome.io/ - [SIL OFL 1.1](http://scripts.sil.or
 
 ## License
 
-Copyright &copy; 2017 Brandon Siegel &lt;brandon@smartercode.net&gt;
+Copyright &copy; 2020 Brandon Siegel &lt;brandon@smartercode.net&gt;
 
 Licensed under the [WTFPL version 2](http://www.wtfpl.net/txt/copying/).
