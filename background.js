@@ -47,11 +47,11 @@ function setPageAction(tabId) {
     browser.pageAction.show(tabId);
     browser.pageAction.setIcon({
       tabId: tabId,
-      path: getIcon(version)
+      path: getIcon(version),
     });
     browser.pageAction.setTitle({
       tabId: tabId,
-      title: getTitle(version)
+      title: getTitle(version),
     });
   }
 }
@@ -75,7 +75,7 @@ function getTitle(version) {
 }
 
 browser.webRequest.onHeadersReceived.addListener(
-  e => {
+  (e) => {
     if (
       e.tabId === -1 ||
       (e.type !== RESOURCE_TYPE_MAIN_FRAME &&
@@ -97,16 +97,16 @@ browser.webRequest.onHeadersReceived.addListener(
   ["responseHeaders"]
 );
 
-browser.webNavigation.onCommitted.addListener(e => {
+browser.webNavigation.onCommitted.addListener((e) => {
   if (e.frameId === 0) {
     setPageAction(e.tabId);
   }
 });
 
-browser.tabs.onActivated.addListener(e => {
+browser.tabs.onActivated.addListener((e) => {
   setPageAction(e.tabId);
 });
 
-browser.tabs.onRemoved.addListener(tabId => {
+browser.tabs.onRemoved.addListener((tabId) => {
   state[tabId] = null;
 });
