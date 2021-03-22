@@ -3,21 +3,32 @@
   "version": "3.2.0",
   "license": "WTFPL",
   "scripts": {
-    "start": "web-ext run",
-    "build": "web-ext build -i jsconfig.json package.json package-lock.json node_modules *.md icons/src -n 'http2-indicator-{version}.zip' -o",
-    "sign": "web-ext sign -i jsconfig.json package.json package-lock.json node_modules *.md icons/src ",
-    "elint": "web-ext lint",
-    "lint": "eslint .",
-    "prettify": "prettier --write *.js"
+    "build": "tsc",
+    "start": "tsc && web-ext run",
+    "package": "tsc && web-ext build -n 'http2-indicator-{version}.zip' -o",
+    "sign": "web-ext sign",
+    "lint": "eslint **/*.ts && web-ext lint",
+    "prettify": "prettier --write **/*.ts"
   },
   "devDependencies": {
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "prettier": "^2.1.2",
-    "web-ext": "^5.1.0"
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3",
+    "web-ext": "^5.5.0",
+    "web-ext-types": "^3.2.1"
+  },
+  "webExt": {
+    "ignoreFiles": [
+      "package*.json",
+      "tsconfig.json",
+      "*.ts",
+      "*.md",
+      "node_modules",
+      "icons/src"
+    ]
   }
 }

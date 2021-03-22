@@ -5,9 +5,14 @@ const HEADER_HTTP3 = "x-firefox-http3";
 const RESOURCE_TYPE_MAIN_FRAME = "main_frame";
 const RESOURCE_TYPE_SUB_FRAME = "sub_frame";
 
-const state = {};
+const state: { [key: number]: string } = {};
 
-function evaluateState(tabId, resourceType, headerName, headerValue) {
+function evaluateState(
+  tabId: number,
+  resourceType: browser.webRequest.ResourceType,
+  headerName: string,
+  headerValue: string
+) {
   if (resourceType === RESOURCE_TYPE_MAIN_FRAME) {
     updateState(tabId, getVersion(headerName, headerValue));
   } else if (
@@ -18,7 +23,7 @@ function evaluateState(tabId, resourceType, headerName, headerValue) {
   }
 }
 
-function getVersion(headerName, headerValue) {
+function getVersion(headerName: string, headerValue: string): string {
   if (headerName === HEADER_HTTP3) {
     return "HTTP/3 (" + headerValue + ")";
   }
@@ -40,13 +45,13 @@ function getVersion(headerName, headerValue) {
   return STATE_NONE;
 }
 
-function updateState(tabId, version) {
+function updateState(tabId: number, version: string) {
   state[tabId] = version;
   setPageAction(tabId);
 }
 
-function setPageAction(tabId) {
-  let version = state[tabId];
+function setPageAction(tabId: number) {
+  const version = state[tabId];
   if (!version) {
     return;
   }
@@ -57,16 +62,16 @@ function setPageAction(tabId) {
     browser.pageAction.show(tabId);
     browser.pageAction.setIcon({
       tabId: tabId,
-      path: getIcon(version)
+      path: getIcon(version),
     });
     browser.pageAction.setTitle({
       tabId: tabId,
-      title: getTitle(version)
+      title: getTitle(version),
     });
   }
 }
 
-function getIcon(version) {
+function getIcon(version: string): string {
   if (version === STATE_MIXED) {
     return "icons/icon-gray.svg";
   } else if (version.startsWith("HTTP/3")) {
@@ -79,7 +84,7 @@ function getIcon(version) {
   return null;
 }
 
-function getTitle(version) {
+function getTitle(version: string): string {
   if (version === STATE_MIXED) {
     return browser.i18n.getMessage("pageActionTitleMixed");
   } else {
@@ -88,7 +93,7 @@ function getTitle(version) {
 }
 
 browser.webRequest.onHeadersReceived.addListener(
-  e => {
+  (e) => {
     if (
       e.tabId === -1 ||
       (e.type !== RESOURCE_TYPE_MAIN_FRAME &&
@@ -97,29 +102,29 @@ browser.webRequest.onHeadersReceived.addListener(
       return;
     }
 
-    for (let header of e.responseHeaders) {
-      let headerName = header.name.toLowerCase();
+    for (const header of e.responseHeaders) {
+      const headerName = header.name.toLowerCase();
       if (headerName === HEADER_SPDY || headerName === HEADER_HTTP3) {
         evaluateState(e.tabId, e.type, headerName, header.value);
         return;
       }
     }
-    evaluateState(e.tabId, e.type);
+    evaluateState(e.tabId, e.type, undefined, undefined);
   },
   { urls: ["<all_urls>"] },
   ["responseHeaders"]
 );
 
-browser.webNavigation.onCommitted.addListener(e => {
+browser.webNavigation.onCommitted.addListener((e) => {
   if (e.frameId === 0) {
     setPageAction(e.tabId);
   }
 });
 
-browser.tabs.onActivated.addListener(e => {
+browser.tabs.onActivated.addListener((e) => {
   setPageAction(e.tabId);
 });
 
-browser.tabs.onRemoved.addListener(tabId => {
-  state[tabId] = null;
+browser.tabs.onRemoved.addListener((tabId) => {
+  state[tabId] = undefined;
 });
