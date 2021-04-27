@@ -32,10 +32,27 @@ function setPageAction(tabId: number) {
     browser.pageAction.hide(tabId);
   } else {
     browser.pageAction.show(tabId);
+    browser.pageAction.setIcon({
+      tabId: tabId,
+      path: getIcon(protocol),
+    });
     browser.pageAction.setTitle({
       tabId: tabId,
       title: getTitle(protocol),
     });
+  }
+}
+
+function getIcon(protocol: HttpProtocol): string {
+  switch (protocol.name) {
+    case "HTTP/3":
+      return "icons/action-http3.svg";
+    case "HTTP/2":
+      return "icons/action-http2.svg";
+    case "SPDY":
+      return "icons/action-spdy.svg";
+    default:
+      return "icons/action-default.svg";
   }
 }
 

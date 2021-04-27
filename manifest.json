@@ -23,7 +23,7 @@
   ],
   "page_action": {
     "browser_style": false,
-    "default_icon": "icons/action.svg"
+    "default_icon": "icons/action-default.svg"
   },
   "background": {
     "scripts": ["background.js"]
