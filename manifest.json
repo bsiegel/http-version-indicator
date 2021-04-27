@@ -22,7 +22,8 @@
     "webRequest"
   ],
   "page_action": {
-    "browser_style": false
+    "browser_style": false,
+    "default_icon": "icons/action.svg"
   },
   "background": {
     "scripts": ["background.js"]
