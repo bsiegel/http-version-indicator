@@ -1,18 +1,14 @@
 {
   "extensionName": {
-    "message": "HTTP/2 Gösterge",
+    "message": "HTTP Version Indicator",
     "description": "Uzantının adı."
   },
   "extensionDescription": {
-    "message": "Adres çubuğunda HTTP/2 desteği gösteren bir gösterge.",
+    "message": "Adres çubuğunda HTTP sürümünü gösteren bir gösterge.",
     "description": "Eklentinin açıklaması."
   },
-  "pageActionTitleMixed": {
-    "message": "HTTP/2, üst düzey belgede bulunan bazı alt belgeler için etkindir.",
-    "description": "Sadece alt belge etkin olduğunda sayfa eylem ipucu."
-  },
   "pageActionTitle": {
-    "message": "$VERSION$, üst düzey belge için etkin.",
+    "message": "Sayfa, $VERSION$ ile yüklendi.",
     "description": "Üst düzey belge etkin olduğunda sayfa eylem ipucu.",
     "placeholders": {
       "version" : {
