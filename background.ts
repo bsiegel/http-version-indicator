@@ -43,16 +43,24 @@ function setPageAction(tabId: number) {
   }
 }
 
-function getIcon(protocol: HttpProtocol): string {
+function getIcon(protocol: HttpProtocol): Record<number, string> {
   switch (protocol.name) {
     case "HTTP/3":
-      return "icons/action-http3.svg";
+      return {
+        16: "icons/action-http3-16.png",
+        32: "icons/action-http3-32.png",
+      };
     case "HTTP/2":
-      return "icons/action-http2.svg";
     case "SPDY":
-      return "icons/action-spdy.svg";
+      return {
+        16: "icons/action-http2-16.png",
+        32: "icons/action-http2-32.png",
+      };
     default:
-      return "icons/action-default.svg";
+      return {
+        16: "icons/action-default-16.png",
+        32: "icons/action-default-32.png",
+      };
   }
 }
 

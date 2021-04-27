@@ -23,7 +23,10 @@
   ],
   "page_action": {
     "browser_style": false,
-    "default_icon": "icons/action-default.svg"
+    "default_icon": {
+      "16": "icons/action-default-16.png",
+      "32": "icons/action-default-32.png"
+    }
   },
   "background": {
     "scripts": ["background.js"]
