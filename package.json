@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc && web-ext run",
-    "package": "tsc && web-ext build -n 'http2-indicator-{version}.zip' -o",
-    "sign": "web-ext sign",
+    "package": "tsc && web-ext build -n 'http2-indicator-{version}.zip' -o --verbose",
+    "sign": "web-ext sign -n 'http2-indicator-{version}-signed.zip' --verbose",
     "lint": "eslint **/*.ts && web-ext lint",
     "prettify": "prettier --write **/*.ts"
   },
