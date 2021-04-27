@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
-  "version": "3.1",
+  "version": "3.2",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "icons": {
@@ -22,7 +22,8 @@
     "webRequest"
   ],
   "page_action": {
-    "browser_style": false
+    "browser_style": false,
+    "default_icon": "icons/action.svg"
   },
   "background": {
     "scripts": ["background.js"]

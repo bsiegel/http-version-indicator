@@ -1,19 +1,15 @@
 {
   "extensionName": {
-    "message": "HTTP/2 Indicator",
+    "message": "HTTP Version Indicator",
     "description": "Name of the extension."
   },
   "extensionDescription": {
-    "message": "An indicator showing HTTP/2 support in the address bar.",
+    "message": "An indicator showing the HTTP version used to load the page in the address bar.",
     "description": "Description of the extension."
   },
-  "pageActionTitleMixed": {
-    "message": "HTTP/2 is active for some sub-documents included in the top-level document",
-    "description": "Page action tooltip when only sub-documents are active."
-  },
   "pageActionTitle": {
-    "message": "$VERSION$ is active for the top-level document",
-    "description": "Page action tooltip when the top-level document is active.",
+    "message": "Page was loaded over $VERSION$",
+    "description": "Page action tooltip for the top-level document.",
     "placeholders": {
       "version" : {
         "content" : "$1",

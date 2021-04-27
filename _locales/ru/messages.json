@@ -1,18 +1,14 @@
 {
   "extensionName": {
-    "message": "HTTP/2 Indicator",
+    "message": "HTTP Version Indicator",
     "description": "Название дополнения"
   },
   "extensionDescription": {
-    "message": "Показывает поддержку HTTP/2 в адресной строке",
+    "message": "Показывает версию HTTP в адресной строке",
     "description": "Описание дополнения"
   },
-  "pageActionTitleMixed": {
-    "message": "HTTP/2 активен для поддокументов, включённых в документ верхнего уровня",
-    "description": "Всплывающая подсказка, когда активен только для поддокументов"
-  },
   "pageActionTitle": {
-    "message": "$VERSION$ активен для документа верхнего уровня",
+    "message": "Страница была загружена через $VERSION$",
     "description": "Всплывающая подсказка, когда активен документ верхнего уровня",
     "placeholders": {
       "version" : {

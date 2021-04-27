@@ -1,3 +1,4 @@
 node_modules/
 web-ext-artifacts/
 .DS_Store
+background.js
