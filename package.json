@@ -1,12 +1,12 @@
 {
-  "name": "http2-indicator",
+  "name": "http-version-indicator",
   "version": "3.2.0",
   "license": "WTFPL",
   "scripts": {
     "build": "tsc",
     "start": "tsc && web-ext run",
-    "package": "tsc && web-ext build -n 'http2-indicator-{version}.zip' -o --verbose",
-    "sign": "web-ext sign -n 'http2-indicator-{version}-signed.zip' --verbose",
+    "package": "tsc && web-ext build -n 'http-version-indicator-{version}.zip' -o --verbose",
+    "sign": "web-ext sign -n 'http-version-indicator-{version}-signed.zip' --verbose",
     "lint": "eslint **/*.ts && web-ext lint",
     "prettify": "prettier --write **/*.ts"
   },
